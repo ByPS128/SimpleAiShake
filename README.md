@@ -1,6 +1,6 @@
 # Snake Game in C#
 
-![Snake Game](https://example.com/snake-game-screenshot.png![img.png](img.png))
+![Snake Game](![image](https://github.com/ByPS128/SimpleAiShake/assets/44829883/e12832f2-48df-4156-a583-afc29a684bca)
 
 ## Overview
 
