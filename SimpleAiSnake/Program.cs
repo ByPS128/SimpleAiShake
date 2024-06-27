@@ -519,33 +519,27 @@ internal class Program
         Console.ResetColor();
     }
 
-    private static bool ShowGameOverScreen()
+    static bool ShowGameOverScreen()
     {
         int consoleHeight = Console.WindowHeight;
-        var gameOverBoxHeight = 9;
-        var gameOverBoxWidth = 40;
-        int gameOverBoxTop = consoleHeight - gameOverBoxHeight - 1 < height + 2
-            ? (height - gameOverBoxHeight) / 2
+        int gameOverBoxHeight = 9;
+        int gameOverBoxWidth = 40;
+        int gameOverBoxTop = consoleHeight - gameOverBoxHeight - 1 < height + 2 
+            ? (height - gameOverBoxHeight) / 2 
             : height + 3;
 
         Draw();
 
         Console.ForegroundColor = ConsoleColor.White;
-        for (var i = 0; i < gameOverBoxHeight; i++)
+        for (int i = 0; i < gameOverBoxHeight; i++)
         {
             Console.SetCursorPosition((width * 2 - gameOverBoxWidth) / 2, gameOverBoxTop + i);
             if (i == 0)
-            {
                 Console.Write("╔" + new string('═', gameOverBoxWidth - 2) + "╗");
-            }
             else if (i == gameOverBoxHeight - 1)
-            {
                 Console.Write("╚" + new string('═', gameOverBoxWidth - 2) + "╝");
-            }
             else
-            {
                 Console.Write("║" + new string(' ', gameOverBoxWidth - 2) + "║");
-            }
         }
 
         Console.ForegroundColor = ConsoleColor.Red;
@@ -561,16 +555,11 @@ internal class Program
 
         while (true)
         {
-            ConsoleKey key = Console.ReadKey(true).Key;
+            var key = Console.ReadKey(true).Key;
             if (key == ConsoleKey.A)
-            {
                 return true;
-            }
-
             if (key == ConsoleKey.N)
-            {
                 return false;
-            }
         }
     }
 
